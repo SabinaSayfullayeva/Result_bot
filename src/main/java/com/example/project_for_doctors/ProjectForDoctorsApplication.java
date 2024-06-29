@@ -4,6 +4,7 @@ import com.example.project_for_doctors.bot.DoctorsBot;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
@@ -15,10 +16,13 @@ public class ProjectForDoctorsApplication {
         SpringApplication.run(ProjectForDoctorsApplication.class, args);
     }
 
-    @Bean
+ @Bean
     public TelegramBotsApi telegramBotsApi(DoctorsBot doctorsBot) throws TelegramApiException {
         TelegramBotsApi telegramBotsApi=new TelegramBotsApi(DefaultBotSession.class);
         telegramBotsApi.registerBot(doctorsBot);
         return telegramBotsApi;
     }
+
+
+
 }

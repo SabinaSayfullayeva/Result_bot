@@ -36,5 +36,22 @@ public class DoctorService {
         return ResponseEntity.notFound().build();
     }
 
+   /* public ResponseEntity<ApiResponse> update(Long chatId, DoctorState state, DoctorDto doctorDto){
+        Patient patient=patientRepository.findByPhone(phone);
 
+        if (patient == null){
+            return ResponseEntity.notFound().build();
+        }else {
+
+            Photo photo = photoService.findByUrl(patientDto.getPhotoUrl());
+            patient.setFirstname(patientDto.getFirstname());
+            patient.setLastname(patientDto.getLastname());
+            patient.setPhoto(photo);
+            patient.setAddress(patientDto.getAddress());
+
+            saveToDb(patient);
+        }
+        return ResponseEntity.ok().body(new ApiResponse(200, "Doctor Updated", null));
+
+    }*/
 }
